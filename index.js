@@ -1,7 +1,9 @@
-const heyBeauty_controller = require("./heyBeauty/heyBeauty_controller");
-const imageUpload_controller= require ("./heyBeauty/imageUpload_controller");
+const router = require("express").Router();
+const { heyBeauty_routes } = require("./heyBeauty/heyBeauty_routes");
 
-module.exports = {
-    heyBeauty_controller,
-    imageUpload_controller
-};
+
+router.use("/v1/", heyBeauty_routes);
+
+// router.post('/v1/', upload.fields([{ name: 'pose' }, { name: 'cloth' }]), heyBeauty_routes);
+
+module.exports = router;
